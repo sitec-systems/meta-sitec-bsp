@@ -1,0 +1,11 @@
+ABORT	'BUSY'
+ABORT 	'NO CARRIER'
+ABORT 	'ERROR'
+ABORT   '0,0'
+ABORT   '0,2'
+'' 	'AT'
+'OK'	@/etc/chatscripts/apn
+'OK'	'AT'
+'OK'	'ATD*99#'
+#'OK'	'AT+CGDATA="PPP",1'
+CONNECT ''
