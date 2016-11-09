@@ -7,9 +7,8 @@ MAINTAINER = "Robert Lehmann <robert.lehmann@sitec-systems.de>"
 LIC_FILES_CHKSUM = "file://${WORKDIR}/LICENSE;md5=1a6d268fd218675ffea8be556788b780"
 DEPENDS_${PN} = "ppp"
 RDEPENDS_${PN} += "ublox-udev"
-RDEPENDS_${PN} += "wirelessctl"
 
-PR = "r3"
+PR = "r4"
 
 SRC_URI = "file://09connfile"
 SRC_URI += "file://93removeconnfile"
