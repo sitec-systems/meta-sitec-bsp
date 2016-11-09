@@ -3,16 +3,9 @@
 CONFIG_DIR=/sys/kernel/config
 GADGET=$CONFIG_DIR/usb_gadget/g1
 
-usb1=0
-
-check_usb() {
-    mode=$(cat /proc/device-tree/soc/aips-bus@02100000/usb@02184000/dr_mode)
-    if [ "$mode" = "peripheral" ]; then
-        usb1=1
-    fi
-}
 
 start_usb_ether() {
+	
 	mount none $CONFIG_DIR -t configfs
 	mkdir $CONFIG_DIR/usb_gadget/g1
 	echo "0x0525" > $GADGET/idVendor
@@ -29,11 +22,7 @@ start_usb_ether() {
 	echo Conf 1 > $GADGET/configs/c.1/strings/0x409/configuration
 	echo 120 > $GADGET/configs/c.1/MaxPower
 	cd $GADGET && ln -s functions/rndis.usb1 configs/c.1
-    if [ $usb1 -eq 1 ]; then
-        echo ci_hdrc.0 > $GADGET/UDC
-    else
-        echo ci_hdrc.1 > $GADGET/UDC
-    fi
+    echo ci_hdrc.0 > $GADGET/UDC
 }
 
 setup_network_interface() {
@@ -42,7 +31,6 @@ setup_network_interface() {
 
 case $1 in
 	start)
-        check_usb
 		start_usb_ether
 		setup_network_interface
 		;;
