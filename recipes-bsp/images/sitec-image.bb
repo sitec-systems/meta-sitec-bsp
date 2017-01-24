@@ -1,6 +1,6 @@
 require recipes-core/images/core-image-minimal.bb
 
-PR = "r2"
+PR = "r3"
 
 IMAGE_INSTALL += "packagegroup-core-ssh-openssh"
 IMAGE_INSTALL += "iproute2"
@@ -12,7 +12,6 @@ IMAGE_INSTALL += "canutils"
 IMAGE_INSTALL += "vim"
 IMAGE_INSTALL += "u-boot-imx-fw-utils"
 IMAGE_INSTALL += "vbusenable"
-IMAGE_INSTALL += "boost"
 IMAGE_INSTALL += "usbnet"
 IMAGE_INSTALL += "wireless-tools"
 IMAGE_INSTALL += "wpa-supplicant"
@@ -29,6 +28,5 @@ IMAGE_INSTALL += "cellularctl"
 IMAGE_INSTALL += "ppp"
 IMAGE_INSTALL += "ppp-configuration"
 IMAGE_INSTALL += "gpsd"
-IMAGE_INSTALL += "bc"
 IMAGE_INSTALL += "gdbserver"
 IMAGE_INSTALL += "openssh-sftp-server"
