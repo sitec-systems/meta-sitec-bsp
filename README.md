@@ -18,3 +18,7 @@ URI: git://git.openembedded.org/meta-openembedded
 > branch: krogoth
 
 > revision: 247b1267bbe95719cd4877d2d3cfbaf2a2f4865a
+
+URI git://git.yoctoproject.org/meta-java
+
+> revision: 9edf7d5aa5bdcf9afc4365fd1d85feca72b4ef1a
