@@ -1,6 +1,6 @@
 require recipes-core/images/core-image-minimal.bb
 
-PR = "r3"
+PR = "r4"
 
 IMAGE_INSTALL += "packagegroup-core-ssh-openssh"
 IMAGE_INSTALL += "iproute2"
@@ -30,3 +30,4 @@ IMAGE_INSTALL += "ppp-configuration"
 IMAGE_INSTALL += "gpsd"
 IMAGE_INSTALL += "gdbserver"
 IMAGE_INSTALL += "openssh-sftp-server"
+IMAGE_INSTALL += "bsp-version"
