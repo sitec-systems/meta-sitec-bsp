@@ -1,6 +1,6 @@
 require recipes-core/images/core-image-minimal.bb
 
-PR = "r4"
+PR = "r5"
 
 IMAGE_INSTALL += "packagegroup-core-ssh-openssh"
 IMAGE_INSTALL += "iproute2"
@@ -9,8 +9,8 @@ IMAGE_INSTALL += "nano"
 IMAGE_INSTALL += "mtd-utils"
 IMAGE_INSTALL += "mtd-utils-ubifs"
 IMAGE_INSTALL += "canutils"
-IMAGE_INSTALL += "u-boot-imx-fw-utils"
 IMAGE_INSTALL += "vbusenable"
+IMAGE_INSTALL += "u-boot-fw-utils"
 IMAGE_INSTALL += "usbnet"
 IMAGE_INSTALL += "flashubi"
 IMAGE_INSTALL += "wireless-tools"
