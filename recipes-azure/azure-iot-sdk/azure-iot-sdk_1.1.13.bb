@@ -14,12 +14,17 @@ DEPENDS = "\
     azure-c-shared-utility \
     azure-uamqp-c \
     azure-umqtt-c \
+    boost \
 "
+
+RDEPENDS_${PYTHON_PN}-${PN} += "boost"
+RDEPENDS_${PYTHON_PN}-${PN} += "python3"
 
 SRC_URI = "\
     gitsm://github.com/Azure/azure-iot-sdk-python.git \
     file://0001-Refactor-cmake-if-statements.patch \
     file://0002-Only-run-tests-if-requested.patch \
+    file://0003-CMakeLists-Fix-boost-python3-find-routine.patch \
 "
 SRCREV = "5af0e09e09ae2ba41c1e6b70efa2f1d431a61a26"
 
@@ -39,7 +44,7 @@ PACKAGES = "\
 "
 
 PACKAGECONFIG ??= "python"
-PACKAGECONFIG[python] = "-Dbuild_python:STRING=${PYTHON_BASEVERSION}, -Dbuild_python:BOOL=OFF, ${PYTHON_PN} boost, boost-python"
+PACKAGECONFIG[python] = "-Dbuild_python:STRING=${PYTHON_BASEVERSION}, -Dbuild_python:BOOL=ON, ${PYTHON_PN} boost, boost-python3"
 
 do_configure_prepend() {
     cd ${S}
