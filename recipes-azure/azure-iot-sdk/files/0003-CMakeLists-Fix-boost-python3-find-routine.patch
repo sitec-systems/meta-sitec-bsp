@@ -1,0 +1,39 @@
+From 807ef0caaf4a436b5a07e133736660fae9d91347 Mon Sep 17 00:00:00 2001
+From: Robert Lehmann <robert.lehmann@sitec-systems.de>
+Date: Wed, 4 Oct 2017 10:58:50 +0200
+Subject: [PATCH] CMakeLists: Fix boost-python3 find routine
+
+---
+ device/iothub_client_python/CMakeLists.txt | 2 +-
+ service/CMakeLists.txt                     | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/device/iothub_client_python/CMakeLists.txt b/device/iothub_client_python/CMakeLists.txt
+index 0f850b8..000dc1b 100644
+--- a/device/iothub_client_python/CMakeLists.txt
++++ b/device/iothub_client_python/CMakeLists.txt
+@@ -49,7 +49,7 @@ else()
+     else()
+         # Remove the period from python version for boost component
+         string(REPLACE "." "" boost_python ${build_python})
+-        find_package(Boost COMPONENTS "python-py${boost_python}")
++        find_package(Boost COMPONENTS "python3")
+     endif()
+ endif()
+ 
+diff --git a/service/CMakeLists.txt b/service/CMakeLists.txt
+index bf82c34..371fc89 100644
+--- a/service/CMakeLists.txt
++++ b/service/CMakeLists.txt
+@@ -49,7 +49,7 @@ else()
+     else()
+         # Remove the period from python version for boost component
+         string(REPLACE "." "" boost_python ${build_python})
+-        find_package(Boost COMPONENTS "python-py${boost_python}")
++        find_package(Boost COMPONENTS "python3")
+     endif()
+ endif()
+ 
+-- 
+2.1.4
+
