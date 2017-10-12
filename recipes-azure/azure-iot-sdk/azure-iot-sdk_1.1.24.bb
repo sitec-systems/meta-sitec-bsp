@@ -10,6 +10,8 @@ inherit cmake python3-dir
 RPROVIDES_${PN} += "azure-iot-sdk-c"
 RPROVIDES_${PN}-dev += "azure-iot-sdk-c-dev"
 
+PR = "r1"
+
 DEPENDS = "\
     azure-c-shared-utility \
     azure-uamqp-c \
@@ -21,14 +23,14 @@ RDEPENDS_${PYTHON_PN}-${PN} += "boost"
 RDEPENDS_${PYTHON_PN}-${PN} += "python3"
 
 SRC_URI = "\
-    gitsm://github.com/Azure/azure-iot-sdk-python.git \
+    git://github.com/Azure/azure-iot-sdk-python.git \
     file://0001-Refactor-cmake-if-statements.patch \
     file://0002-Only-run-tests-if-requested.patch \
     file://0003-CMakeLists-Fix-boost-python3-find-routine.patch \
 "
-SRCREV = "5af0e09e09ae2ba41c1e6b70efa2f1d431a61a26"
+SRCREV = "db0785dc35aeee45fcc03b8fad2c0ccf57ca24d8"
 
-PR = "r2"
+PR = "r0"
 
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"
@@ -44,11 +46,31 @@ PACKAGES = "\
 "
 
 PACKAGECONFIG ??= "python"
-PACKAGECONFIG[python] = "-Dbuild_python:STRING=${PYTHON_BASEVERSION}, -Dbuild_python:BOOL=ON, ${PYTHON_PN} boost, boost-python3"
+PACKAGECONFIG[python] = "-Dbuild_python:STRING=${PYTHON_BASEVERSION}, -Dbuild_python:BOOL=OFF, ${PYTHON_PN} boost, boost-python3"
+
+#do_configure_prepend() {
+#   cd ${S}
+#    git config --global http.sslverify "false"
+#    git submodule update --init c
+#    
+#    cd ${S}/c
+#    git submodule update --init
+#
+#    cd ${S}/c/deps/uhttp
+#    git submodule update --init
+#
+#    cd ${S}/c/dps_client/deps/utpm
+#    git submodule update --init
+#
+#    cd ${S}/c/uamqp
+#    git submodule update --init deps/azure-c-shared-utility
+#
+#    cd ${S}/c/umqtt
+#    git submodule update --init
+#}
 
 do_configure_prepend() {
     cd ${S}
-    git config --global http.sslverify "false"
     git submodule update --init --recursive
 }
 
