@@ -1,6 +1,6 @@
 require recipes-bsp/images/sitec-image.bb
 
-PR = "r1"
+PR = "r3"
 
 IMAGE_INSTALL += "gtest"
 IMAGE_INSTALL += "gcc"
@@ -25,6 +25,11 @@ IMAGE_INSTALL += "python-smbus"
 IMAGE_INSTALL += "python3-misc"
 IMAGE_INSTALL += "python3-shell"
 IMAGE_INSTALL += "python3-tblib"
+IMAGE_INSTALL += "paho-mqtt-c"
+IMAGE_INSTALL += "paho-mqtt-cpp"
+IMAGE_INSTALL += "cppzmq-dev"
+IMAGE_INSTALL += "zeromq"
+
 
 EXTRA_IMAGE_FEATURES_append = " dev-pkgs"
 EXTRA_IMAGE_FEATURES_append = " staticdev-pkgs"
