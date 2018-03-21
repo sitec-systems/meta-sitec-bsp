@@ -44,7 +44,9 @@ IMAGE_INSTALL += "dnsmasq"
 IMAGE_INSTALL += "samba"
 IMAGE_INSTALL += "perf"
 IMAGE_INSTALL += "valgrind"
-
+IMAGE_INSTALL += "scanfestival"
+IMAGE_INSTALL += "kacanopen"
+IMAGE_INSTALL += "vsftpd"
 
 
 EXTRA_IMAGE_FEATURES_append = " dev-pkgs"
