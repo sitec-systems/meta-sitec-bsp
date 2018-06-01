@@ -47,6 +47,8 @@ IMAGE_INSTALL += "valgrind"
 IMAGE_INSTALL += "scanfestival"
 IMAGE_INSTALL += "kacanopen"
 IMAGE_INSTALL += "vsftpd"
+IMAGE_INSTALL += "ntp"
+IMAGE_INSTALL += "ntpdate"
 
 
 EXTRA_IMAGE_FEATURES_append = " dev-pkgs"
