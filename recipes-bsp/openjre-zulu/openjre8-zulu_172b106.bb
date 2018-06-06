@@ -10,6 +10,7 @@ PR = "r0"
 
 ZULU_NAME= "ezdk-1.8.0_172-8.30.0.106-eval-linux_aarch32hf"
 SRC_URI = "file://${ZULU_NAME}.tar.gz"
+SRC_URI = "file://zulupostinst.sh"
 
 INSANE_SKIP_${PN} = "${ERROR_QA} ${WARN_QA}"
 
@@ -19,6 +20,11 @@ INSANE_SKIP_${PN} = "${ERROR_QA} ${WARN_QA}"
 
 BBCLASSEXTEND = "native"
 
+inherit update-rc.d
+
+INITSCRIPT_NAME = "zulupostinst"
+INITSCRIPT_PARAMS = "start 10 S ."
+
 do_configure() {
 }
 
@@ -27,7 +33,9 @@ do_compile() {
 
 do_install() {
     install -d ${D}/opt/zulu
+    install -d ${D}${sysconfdir}/init.d
     install -m 0644 ${THISDIR}/files/${ZULU_NAME}.tar.gz ${D}/opt/zulu/jre.tar.gz
+    install -m 0755 ${WORKDIR}/zulupostinst.sh ${D}${sysconfdir}/init.d/zulupostinst
 }
 
 pkg_postinst_${PN} () {
