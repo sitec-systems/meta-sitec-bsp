@@ -6,7 +6,7 @@ MAINTAINER = "Robert Lehmann <robert.lehmann@sitec-systems.de>"
 LICENSE = "BSD-2-Clause"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/BSD-2-Clause;md5=8bef8e6712b1be5aa76af1ebde9d6378"
 
-PR = "r0"
+PR = "r1"
 
 S = "${WORKDIR}"
 
@@ -30,7 +30,10 @@ def bsp_version(d):
     for layer in bblayers:
         layer_name = os.path.basename(layer)
         os.chdir(layer)
-        git_hash = subprocess.check_output(['git', 'rev-parse', 'HEAD'])
+        try:
+            git_hash = subprocess.check_output(['git', 'rev-parse', 'HEAD'])
+        except:
+            git_hash = "none"
         layer_data = {}
         layer_data['name'] = layer_name
         layer_data['hash'] = git_hash.replace("\n", "")
