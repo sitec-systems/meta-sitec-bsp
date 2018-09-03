@@ -44,11 +44,11 @@ IMAGE_INSTALL += "dnsmasq"
 IMAGE_INSTALL += "samba"
 IMAGE_INSTALL += "perf"
 IMAGE_INSTALL += "valgrind"
-IMAGE_INSTALL += "scanfestival"
 IMAGE_INSTALL += "vsftpd"
 IMAGE_INSTALL += "ntp"
 IMAGE_INSTALL += "ntpdate"
 IMAGE_INSTALL += "docker"
+IMAGE_INSTALL += "canfestival4linux"
 
 
 EXTRA_IMAGE_FEATURES_append = " dev-pkgs"
