@@ -111,7 +111,7 @@ if [ "$tar_arg" = "" ]; then
 	exit 1
 fi
 
-TMPROOT='/tmp/root'
+TMPROOT='root'
 
 rm -rf $TMPROOT
 mkdir $TMPROOT
@@ -139,3 +139,4 @@ fi
 log "Writing rootFS to $ubivol"
 mkfs.ubifs $ubi_arg -r $TMPROOT $ubivol
 
+rm -rf $TMPROOT
