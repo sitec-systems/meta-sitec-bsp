@@ -48,7 +48,7 @@ IMAGE_INSTALL += "vsftpd"
 IMAGE_INSTALL += "ntp"
 IMAGE_INSTALL += "ntpdate"
 IMAGE_INSTALL += "docker"
-IMAGE_INSTALL += "canfestival4linux"
+IMAGE_INSTALL += "openvpn"
 
 
 EXTRA_IMAGE_FEATURES_append = " dev-pkgs"
