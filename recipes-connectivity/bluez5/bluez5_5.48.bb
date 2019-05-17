@@ -13,7 +13,6 @@ NOINST_TOOLS_READLINE ?= " \
     tools/obex-server-tool \
     tools/bluetooth-player \
     tools/obexctl \
-    tools/btmgmt \
 "
 
 # noinst programs in Makefile.tools that are conditional on TESTING

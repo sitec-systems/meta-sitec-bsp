@@ -65,6 +65,8 @@ do_install_append() {
 	install -d ${D}${INIT_D_DIR}
 	install -m 0755 ${WORKDIR}/init ${D}${INIT_D_DIR}/bluetooth
 
+    install -m 0755 ${WORKDIR}/build/tools/btmgmt ${D}${bindir}
+
 	install -d ${D}${sysconfdir}/bluetooth/
 	if [ -f ${S}/profiles/network/network.conf ]; then
 		install -m 0644 ${S}/profiles/network/network.conf ${D}/${sysconfdir}/bluetooth/
