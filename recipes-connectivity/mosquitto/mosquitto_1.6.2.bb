@@ -39,10 +39,10 @@ do_install() {
     install -m 0755 ${S}/mosquitto.conf ${D}${sysconfdir}/mosquitto
     install -m 0755 ${S}/../mosquitto.sh ${D}${sysconfdir}/init.d/mosquitto
 
-    ln -s /usr/lib/libmosquittopp.so.1 ${D}/usr/lib/libmosquittopp.so
-    ln -s /usr/lib/libmosquitto.so.1 ${D}/usr/lib/libmosquitto.so
-    ln -s /usr/lib/libmosquittopp.so.1 ${D}/usr/lib/libmosquittopp.so.1.6.2
-    ln -s /usr/lib/libmosquitto.so.1 ${D}/usr/lib/libmosquitto.so.1.6.2
+    cd ${D}${libdir} && ln -s libmosquittopp.so.1 libmosquittopp.so
+    cd ${D}${libdir} && ln -s libmosquitto.so.1 libmosquitto.so
+    cd ${D}${libdir} && ln -s libmosquittopp.so.1 libmosquittopp.so.1.6.2
+    cd ${D}${libdir} && ln -s libmosquitto.so.1 libmosquitto.so.1.6.2
 
     install -m 0655 ${S}/lib/mosquitto.h ${D}${includedir}
     install -m 0655 ${S}/lib/cpp/mosquittopp.h ${D}${includedir}
