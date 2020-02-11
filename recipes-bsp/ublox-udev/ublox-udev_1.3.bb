@@ -14,6 +14,7 @@ SRC_URI += "file://LICENSE"
 SRC_URI += "file://60-ublox-neo.rules"
 SRC_URI += "file://60-ublox-lara.rules"
 SRC_URI += "file://60-ublox-sara.rules"
+SRC_URI += "file://60-ublox-toby.rules"
 SRC_URI += "file://ublox-modem-helper"
 
 do_install() {
@@ -22,6 +23,7 @@ do_install() {
     install -m 0644 ${WORKDIR}/60-ublox-sara.rules ${D}${sysconfdir}/udev/rules.d
     install -m 0644 ${WORKDIR}/60-ublox-lara.rules ${D}${sysconfdir}/udev/rules.d
     install -m 0644 ${WORKDIR}/60-ublox-neo.rules ${D}${sysconfdir}/udev/rules.d
+    install -m 0644 ${WORKDIR}/60-ublox-toby.rules ${D}${sysconfdir}/udev/rules.d
     install -m 0744 ${WORKDIR}/ublox-modem-helper ${D}/bin/ublox-modem-helper
 }
 
@@ -29,4 +31,5 @@ FILES_${PN} += "${sysconfdir}/udev/rules.d/60-ublox-lisa.rules"
 FILES_${PN} += "${sysconfdir}/udev/rules.d/60-ublox-sara.rules"
 FILES_${PN} += "${sysconfdir}/udev/rules.d/60-ublox-lara.rules"
 FILES_${PN} += "${sysconfdir}/udev/rules.d/60-ublox-neo.rules"
+FILES_${PN} += "${sysconfdir}/udev/rules.d/60-ublox-toby.rules"
 FILES_${PN} += "/bin/ublox-modem-helper"
