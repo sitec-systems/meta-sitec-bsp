@@ -1,0 +1,21 @@
+diff -r ef6664d03577 -r 36ea1b3e7611 setup.py
+--- a/setup.py	Wed Jan 22 12:15:36 2020 +0100
++++ b/setup.py	Thu Jun 25 15:21:30 2020 +0200
+@@ -19,7 +19,7 @@
+     glib_libs = [x.strip() for x in glib_libs if x]
+ 
+     if sys.version_info.major == 3:
+-        boost_libs = ["boost_python3"+str(sys.version_info.minor)]
++        boost_libs = ["boost_python3"]
+     else:
+         boost_libs = ["boost_python"]
+     extension_modules = [
+@@ -47,7 +47,7 @@
+ else:
+     raise OSError("Not supported OS")
+ 
+-with open("README.md", "r") as fh:
++with open("README.md", "r", encoding="utf-8") as fh:
+     long_description = fh.read()
+ 
+ setup(

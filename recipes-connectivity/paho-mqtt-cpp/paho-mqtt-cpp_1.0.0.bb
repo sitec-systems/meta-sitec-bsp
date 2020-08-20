@@ -4,6 +4,8 @@ HOMEPAGE = "http://www.eclipse.org/paho/"
 SECTION = "console/network"
 LICENSE = "EPL-1.0 | EDL-1.0"
 
+PR = "r1"
+
 LIC_FILES_CHKSUM = " \
         file://edl-v10;md5=3adfcc70f5aeb7a44f3f9b495aa1fbf3 \
         file://epl-v10;md5=659c8e92a40b6df1d9e3dccf5ae45a08 \
@@ -15,7 +17,7 @@ SRC_URI = "git://github.com/eclipse/paho.mqtt.cpp;protocol=http"
 
 SRCREV = "16573488fa699ac94d920024736974a2206b794b"
 
-DEPENDS = "openssl"
+DEPENDS = "openssl paho-mqtt-c"
 RDEPENDS_${PN} = "paho-mqtt-c"
 
 inherit cmake
