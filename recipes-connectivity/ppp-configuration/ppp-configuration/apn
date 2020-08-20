@@ -1,1 +1,1 @@
-AT+CGDCONT=1,"IP","internet.eplus.de"
+AT+CGDCONT=2,"IPV4V6","web.vodafone.de"

@@ -6,6 +6,5 @@ ABORT   '0,2'
 '' 	'AT'
 'OK'	@/etc/chatscripts/apn
 'OK'	'AT'
-'OK'	'ATD*99#'
-#'OK'	'AT+CGDATA="PPP",1'
+'OK'	'AT+CGDATA="PPP",2'
 CONNECT ''
